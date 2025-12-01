@@ -65,6 +65,53 @@ const sessions: Session[] = [
       { name: "Archivo pdf", type: "PDF" },
     ],
   },
+  {
+    id: 5,
+    title: "Competencia estratégica entre Estados Unidos, China y Rusia — y el rol de la Unión Europea",
+    date: "",
+    topics: [""],
+    enlace: "/ses5.pdf",
+    description:
+      "",
+    materials: [
+      { name: "Libro de apuntes", type: "PDF" },
+    ],
+  },
+  {
+    //Teoría del Idealismo (Liberalismo) en Relaciones Internacionales
+    id: 6,
+    title: "Visiones del Mundo de las Relaciones Internacionales",
+    date: "",
+    topics: [""],
+    enlace: "/ses6.pdf",
+    description: "Visiones del Mundo de las Relaciones Internacionales",
+    materials: [
+      { name: "Archivo pdf", type: "PDF" },
+    ],
+  },
+  {
+    id: 7,
+    title: "NEGOCIOS INTERNACIONALES ",
+    date: "",
+    topics: [""],
+    enlace: "/ses7.pdf",
+    description: "",
+    materials: [
+      { name: "Archivo pdf", type: "PDF" },
+    ],
+  },
+  {
+    //Teoría del Idealismo (Liberalismo) en Relaciones Internacionales
+    id: 8,
+    title: "La Transformación Digital y sus Efectos sobre las Relaciones Internacionales",
+    date: "",
+    topics: [""],
+    enlace: "/ses8.pdf",
+    description: "",
+    materials: [
+      { name: "Archivo pdf", type: "PDF" },
+    ],
+  },
 ]
 
 export default function SessionsSection() {
