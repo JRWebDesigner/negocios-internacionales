@@ -21,7 +21,7 @@ const sessions: Session[] = [
     title: "Antonio Gramsci: Conceptos clave y su relevancia en Relaciones Internacionales",
     date: "",
     topics: [""],
-    enlace: "/ses1.pnf",
+    enlace: "/ses1.pdf",
     description:
       "Introducción a Antonio Gramsci, su teoría de la hegemonía cultural y su impacto en el análisis de las relaciones internacionales.",
     materials: [
@@ -34,7 +34,7 @@ const sessions: Session[] = [
     title: "Teoría Marxista en Relaciones Internacionales e Historia",
     date: "",
     topics: [""],
-    enlace: "/ses2.pnf",
+    enlace: "/ses2.pdf",
     description:
       "Exploración de los fundamentos del marxismo, su enfoque en la economía política y su aplicación al estudio de las relaciones internacionales.",
     materials: [
@@ -46,7 +46,7 @@ const sessions: Session[] = [
     title: "Libro de apuntes",
     date: "",
     topics: [""],
-    enlace: "/ses3.pnf",
+    enlace: "/ses3.pdf",
     description:
       "",
     materials: [
@@ -59,7 +59,7 @@ const sessions: Session[] = [
     title: "Teoría del Idealismo (Liberalismo) en Relaciones Internacionales",
     date: "",
     topics: [""],
-    enlace: "/ses4.pnf",
+    enlace: "/ses4.pdf",
     description: "Análisis del idealismo en las relaciones internacionales, destacando la cooperación internacional, las instituciones globales y la promoción de la paz.",
     materials: [
       { name: "Archivo pdf", type: "PDF" },
