@@ -71,6 +71,25 @@ export default function AboutSection() {
               <h4 className="text-xl font-semibold">Rous Quenallata</h4>
             </div>
           </Card>
+
+          
+          <Card className="bg-card border border-border overflow-hidden hover:border-primary/50 transition-colors">
+            <div className="aspect-square bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
+              <img src="/int4.jpg" alt="Integrante 3" className="w-full h-full object-cover" />
+            </div>
+            <div className="p-6 space-y-3">
+              <h4 className="text-xl font-semibold">Nick Ticona Condori</h4>
+            </div>
+          </Card>
+
+          <Card className="bg-card border border-border overflow-hidden hover:border-primary/50 transition-colors">
+            <div className="aspect-square bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
+              <img src="/int5.jpg" alt="Integrante 3" className="w-full h-full object-cover" />
+            </div>
+            <div className="p-6 space-y-3">
+              <h4 className="text-xl font-semibold">Pamela Quispe Clemente </h4>
+            </div>
+          </Card>
         </div>
       </div>
 
