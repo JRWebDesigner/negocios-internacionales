@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Card } from "@/components/ui/card"
-import { ChevronDown, ChevronUp } from "lucide-react"
+import { ChevronDown, ChevronUp, Download } from "lucide-react"
 
 interface Theory {
   id: string
@@ -12,6 +12,11 @@ interface Theory {
   founder: string
   keyPrinciples: string[]
   examples: string[]
+  pdfs: Array<{
+    id: string
+    name: string
+    url: string
+  }>
 }
 
 const theories: Theory[] = [
@@ -36,6 +41,11 @@ Históricamente, el Idealismo ganó prominencia después de la Primera Guerra Mu
       "Tratados internacionales sobre derechos humanos",
       "Movimientos por la paz mundial y el desarme",
     ],
+    pdfs: [
+      { id: "1", name: "Material de apoyo 1", url: "/id1.pdf" },
+      { id: "2", name: "Material de apoyo 2", url: "/id2.pdf" },
+      { id: "3", name: "Material de apoyo 3", url: "/id3.docx" }
+    ]
   },
   {
     id: "realismo",
@@ -58,6 +68,12 @@ Este enfoque proporciona una explicación realista de las guerras, competencias 
       "Política de equilibrio de poder en Europa",
       "Disuasión nuclear como estrategia de seguridad",
     ],
+    pdfs: [
+      { id: "1", name: "Material de apoyo 1", url: "/real1.pdf" },
+      { id: "2", name: "Material de apoyo 2", url: "/real2.pdf" },
+      { id: "3", name: "Material de apoyo 3", url: "/real3.docx" },
+      { id: "4", name: "Material de apoyo 4", url: "/real4.docx" }
+    ]
   },
   {
     id: "marxismo",
@@ -80,11 +96,27 @@ Los marxistas han contribuido significativamente al análisis de la pobreza glob
       "Teoría de la dependencia en América Latina",
       "Crítica marxista del sistema capitalista global",
     ],
+    pdfs: [
+      { id: "1", name: "Material de apoyo 1", url: "/mar1.pptx" },
+      { id: "2", name: "Material de apoyo 2", url: "/mar2.pdf" },
+      { id: "3", name: "Material de apoyo 3", url: "/mar3.pdf" },
+      { id: "4", name: "Material de apoyo 4", url: "/mar4.docx" }
+    ]
   },
 ]
 
 export default function TheoriesSection() {
   const [expandedId, setExpandedId] = useState<string | null>(null)
+
+  const handleDownload = (pdfUrl: string, fileName: string) => {
+    // Crear un enlace temporal
+    const link = document.createElement('a')
+    link.href = pdfUrl
+    link.download = fileName
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
 
   return (
     <div className="space-y-6">
@@ -146,6 +178,25 @@ export default function TheoriesSection() {
                           Video próximamente disponible
                         </div>
                       )}
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold mb-4 text-primary">Material de Estudio (PDF)</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      {theory.pdfs.map((pdf) => (
+                        <button
+                          key={pdf.id}
+                          onClick={(e) => {
+                            e.stopPropagation() // Evitar que se cierre el acordeón
+                            handleDownload(pdf.url, `${theory.name} - ${pdf.name}.pdf`)
+                          }}
+                          className="flex items-center justify-between p-3 border border-border rounded-lg hover:bg-accent hover:text-accent-foreground transition-colors group"
+                        >
+                          <span className="text-sm font-medium truncate mr-2">{pdf.name}</span>
+                          <Download className="w-4 h-4 flex-shrink-0 text-muted-foreground group-hover:text-primary" />
+                        </button>
+                      ))}
                     </div>
                   </div>
 
