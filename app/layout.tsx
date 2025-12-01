@@ -11,9 +11,9 @@ export const metadata: Metadata = {
   title: "Negocios Internacionales - Plataforma Educativa",
   description:
     "Plataforma educativa sobre Negocios Internacionales: Idealismo, Realismo, Neorrealismo e Ideología de Marx",
-  generator: "JOsue",
+  generator: "v0.app",
 }
-//te amo rossy
+
 export default function RootLayout({
   children,
 }: Readonly<{
