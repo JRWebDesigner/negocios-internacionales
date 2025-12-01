@@ -206,7 +206,7 @@ export default function NewsSection() {
 
               <div className="flex items-center justify-between">
                 <span className="text-sm text-muted-foreground">Fuente: {article.source}</span>
-                <a href={article.link} className="text-primary hover:text-primary/80 flex items-center gap-1">
+                <a href={article.link} className="hidden text-primary hover:text-primary/80 items-center gap-1">
                   Leer más
                   <ExternalLink className="w-4 h-4" />
                 </a>
