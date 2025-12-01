@@ -121,6 +121,35 @@ export default function TheoriesSection() {
               {expandedId === theory.id && (
                 <div className="mt-6 pt-6 border-t border-border space-y-6">
                   <div>
+                    <h4 className="font-semibold mb-3 text-primary">Video Educativo</h4>
+                    <div className="aspect-video w-full rounded-lg overflow-hidden bg-muted">
+                      {theory.id === "idealismo" && (
+                        <iframe
+                          src="https://drive.google.com/file/d/1c2WIR-emJCy9nFm_fxe7CsNTzs_lt7a_/preview"
+                          width="100%"
+                          height="100%"
+                          allow="autoplay"
+                          title="Video de Idealismo"
+                        ></iframe>
+                      )}
+                      {theory.id === "marxismo" && (
+                        <iframe
+                          src="https://drive.google.com/file/d/1w9fJHpF0It4_pmCQwFhw7L_UX9ptT1KB/preview"
+                          width="100%"
+                          height="100%"
+                          allow="autoplay"
+                          title="Video de Marxismo"
+                        ></iframe>
+                      )}
+                      {theory.id === "realismo" && (
+                        <div className="w-full h-full flex items-center justify-center text-muted-foreground">
+                          Video próximamente disponible
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  <div>
                     <h4 className="font-semibold mb-3 text-primary">Contenido Detallado</h4>
                     <p className="text-foreground leading-relaxed whitespace-pre-wrap">{theory.content}</p>
                   </div>

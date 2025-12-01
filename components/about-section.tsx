@@ -1,114 +1,79 @@
 "use client"
 
 import { Card } from "@/components/ui/card"
-import { Users, Target, Lightbulb, Globe } from "lucide-react"
+import { Target, Lightbulb, Globe, Mail, Phone } from "lucide-react"
 
 export default function AboutSection() {
   return (
     <div className="space-y-12">
       {/* About Header */}
       <div className="text-center space-y-4">
-        <h2 className="text-4xl font-bold">Sobre NI Academy</h2>
+        <h2 className="text-4xl font-bold">Nosotros</h2>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
           Plataforma educativa dedicada a fortalecer tu conocimiento en Negocios Internacionales
         </p>
       </div>
 
-      {/* Mission, Vision, Values */}
-      <div className="grid md:grid-cols-3 gap-8">
-        <Card className="bg-card border border-border p-8 space-y-4 hover:border-primary/50 transition-colors">
-          <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
-            <Target className="w-6 h-6 text-primary" />
-          </div>
-          <h3 className="text-xl font-semibold">Nuestra Misión</h3>
-          <p className="text-muted-foreground">
-            Proporcionar recursos educativos de calidad que permitan a estudiantes y profesionales entender las
-            dinámicas complejas de los negocios internacionales y las relaciones globales.
-          </p>
-        </Card>
-
-        <Card className="bg-card border border-border p-8 space-y-4 hover:border-primary/50 transition-colors">
-          <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
-            <Globe className="w-6 h-6 text-primary" />
-          </div>
-          <h3 className="text-xl font-semibold">Nuestra Visión</h3>
-          <p className="text-muted-foreground">
-            Ser la plataforma educativa referente en Latinoamérica para el aprendizaje integral de Negocios
-            Internacionales con herramientas innovadoras y contenido relevante.
-          </p>
-        </Card>
-
-        <Card className="bg-card border border-border p-8 space-y-4 hover:border-primary/50 transition-colors">
-          <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
-            <Lightbulb className="w-6 h-6 text-primary" />
-          </div>
-          <h3 className="text-xl font-semibold">Nuestros Valores</h3>
-          <p className="text-muted-foreground">
-            Excelencia académica, innovación tecnológica, inclusión educativa y compromiso con el desarrollo de
-            profesionales competitivos en el contexto global.
+      {/* Team Description */}
+      <div className="relative rounded-lg overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-10"
+          style={{
+            backgroundImage: "url(/placeholder.svg?height=400&width=1200&query=global business network connections)",
+          }}
+        />
+        <Card className="bg-card border border-border p-8 space-y-4 relative z-10">
+          <h3 className="text-2xl font-bold">Nuestra Historia</h3>
+          <p className="text-lg text-foreground leading-relaxed">
+            Somos estudiantes de la Escuela de la Producción y la Competitividad, comprometidos con expandir nuestros
+            conocimientos y aportar al desarrollo de soluciones innovadoras. A través de este espacio, buscamos
+            compartir nuestras experiencias y reflexiones, promoviendo un aprendizaje constante que nos permita crecer
+            como profesionales y personas. Estamos convencidos de que el conocimiento compartido es clave para el
+            progreso y la transformación.
           </p>
         </Card>
       </div>
 
-      {/* Team Section */}
+      {/* Team Members */}
       <div className="space-y-6">
         <div>
           <h3 className="text-2xl font-bold mb-2">Nuestro Equipo</h3>
-          <p className="text-muted-foreground">
-            NI Academy está conformada por profesionales expertos en Relaciones Internacionales, Economía y Tecnología
-            educativa.
-          </p>
+          <p className="text-muted-foreground">Conoce a los integrantes del grupo de Negocios Internacionales</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          <Card className="bg-card border border-border p-6 space-y-3">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                <Users className="w-6 h-6 text-primary" />
-              </div>
-              <div>
-                <h4 className="font-semibold">Equipo Académico</h4>
-                <p className="text-sm text-muted-foreground">Docentes expertos en RI</p>
-              </div>
+        <div className="grid md:grid-cols-3 gap-6">
+          {/* Team Member 1 */}
+          <Card className="bg-card border border-border overflow-hidden hover:border-primary/50 transition-colors">
+            <div className="aspect-square bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
+              <img src="/int1.jpeg" alt="Integrante 1" className="w-full h-full object-cover" />
             </div>
-            <p className="text-muted-foreground text-sm">
-              Profesionales con experiencia en educación superior y especialización en Relaciones Internacionales y
-              Negocios Globales.
-            </p>
+            <div className="p-6 space-y-3">
+              <h4 className="text-xl font-semibold">Bruno Gumiel</h4>
+            </div>
           </Card>
 
-          <Card className="bg-card border border-border p-6 space-y-3">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                <Lightbulb className="w-6 h-6 text-primary" />
-              </div>
-              <div>
-                <h4 className="font-semibold">Equipo de Desarrollo</h4>
-                <p className="text-sm text-muted-foreground">Tecnólogos e innovadores</p>
-              </div>
+          {/* Team Member 2 */}
+          <Card className="bg-card border border-border overflow-hidden hover:border-primary/50 transition-colors">
+            <div className="aspect-square bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
+              <img src="/int2.jpg" alt="Integrante 2" className="w-full h-full object-cover" />
             </div>
-            <p className="text-muted-foreground text-sm">
-              Especialistas en educación digital que integran las mejores prácticas tecnológicas en la plataforma.
-            </p>
+            <div className="p-6 space-y-3">
+              <h4 className="text-xl font-semibold">Nicolas Garcia</h4>
+            </div>
+          </Card>
+
+          {/* Team Member 3 */}
+          <Card className="bg-card border border-border overflow-hidden hover:border-primary/50 transition-colors">
+            <div className="aspect-square bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
+              <img src="/int3.jpg" alt="Integrante 3" className="w-full h-full object-cover" />
+            </div>
+            <div className="p-6 space-y-3">
+              <h4 className="text-xl font-semibold">Rous Quenallata</h4>
+            </div>
           </Card>
         </div>
       </div>
 
-      {/* Contact Section */}
-      <Card className="bg-card border border-border p-8 space-y-4 text-center">
-        <h3 className="text-2xl font-bold">Ponte en Contacto</h3>
-        <p className="text-muted-foreground">
-          ¿Preguntas o sugerencias? Nos encantaría escucharte y mejorar continuamente.
-        </p>
-        <div className="space-y-2">
-          <p className="text-foreground">
-            Email: <span className="text-primary font-medium">contacto@niacademy.com</span>
-          </p>
-          <p className="text-foreground">
-            Teléfono: <span className="text-primary font-medium">+1 (555) 123-4567</span>
-          </p>
-        </div>
-      </Card>
     </div>
   )
 }

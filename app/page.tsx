@@ -47,7 +47,7 @@ export default function Home() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-2">
               <BookOpen className="w-6 h-6 text-primary" />
-              <span className="text-xl font-bold text-primary">NI Academy</span>
+              <span className="text-xl font-bold text-primary">Grupo 6</span>
             </div>
 
             {/* Desktop Navigation */}
