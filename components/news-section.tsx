@@ -17,57 +17,148 @@ interface NewsArticle {
 const newsArticles: NewsArticle[] = [
   {
     id: 1,
-    title: "Nuevos tratados comerciales impulsan la integración latinoamericana",
-    category: "Comercio",
-    date: "2024-11-28",
+    title: "Alto el fuego en Gaza y plan de paz de Trump entra en vigencia",
+    category: "Geopolítica",
+    date: "2025-11-15",
     description:
-      "Los países latinoamericanos avanzan en negociaciones de nuevos tratados que buscan fortalecer la integración regional y aumentar la competitividad global.",
-    source: "Noticias Internacionales",
+      "Europa lidera la reconstrucción de Gaza tras el alto el fuego del 10 de octubre, permitiendo el retorno de miles de palestinos y estableciendo un fondo de 20.000 millones de dólares.",
+    source: "DW, BBC, ONU",
     link: "#",
   },
   {
     id: 2,
-    title: "La geopolítica del cambio climático en las relaciones internacionales",
-    category: "Geopolítica",
-    date: "2024-11-26",
+    title: "Trump impone aranceles del 130% a China por 'hostilidad comercial'",
+    category: "Economía",
+    date: "2025-11-12",
     description:
-      "Expertos analizan cómo el cambio climático se ha convertido en un factor determinante en las relaciones diplomáticas entre naciones.",
-    source: "Análisis Global",
+      "Estados Unidos anuncia aranceles adicionales del 100% a importaciones chinas respondiendo a controles sobre tierras raras. China acusa 'doble moral' y advierte represalias.",
+    source: "NYT, Reuters, DW",
     link: "#",
   },
   {
     id: 3,
-    title: "Organizaciones internacionales se reúnen para abordar crisis humanitaria",
-    category: "Humanitario",
-    date: "2024-11-24",
+    title: "EE.UU. sanciona a petroleras rusas y congela diálogo con Putin",
+    category: "Geopolítica",
+    date: "2025-10-24",
     description:
-      "La ONU, OIM y otras organizaciones convocan a cumbre urgente para coordinar respuesta a crisis humanitaria global.",
-    source: "Boletín de la ONU",
+      "Washington sanciona a Rosneft y Lukoil, elevando el precio del petróleo mientras Rusia amenaza represalias. La UE libera activos rusos por 140.000 millones de euros para Ucrania.",
+    source: "BBC, CNN, El País",
     link: "#",
   },
   {
     id: 4,
-    title: "Tendencias en diplomacia digital: el futuro de las negociaciones internacionales",
-    category: "Tecnología",
-    date: "2024-11-22",
+    title: "Israel avanza en votación preliminar para anexar Cisjordania",
+    category: "Conflicto",
+    date: "2025-10-23",
     description:
-      "Se analizan las transformaciones en las relaciones diplomáticas con la incorporación de nuevas tecnologías y plataformas digitales.",
-    source: "Revista de Relaciones Internacionales",
+      "La Knéset aprueba preliminarmente un proyecto para anexar Cisjordania. Trump amenaza con cortar apoyo militar si Israel continúa con el plan.",
+    source: "DW, Al Jazeera, NYT",
     link: "#",
   },
   {
     id: 5,
-    title: "Bloques económicos refuerzan alianzas estratégicas",
-    category: "Economía",
-    date: "2024-11-20",
+    title: "Putin anuncia prueba exitosa del misil nuclear Burevestnik",
+    category: "Seguridad",
+    date: "2025-10-29",
     description:
-      "Análisis de cómo los principales bloques económicos mundiales redefinen sus estrategias de cooperación y competencia.",
-    source: "Monitor Económico",
+      "Rusia prueba el misil Burevestnik con propulsión nuclear y autonomía ‘ilimitada’, reavivando temores de carrera armamentística entre potencias.",
+    source: "BBC, CNN, The Guardian",
+    link: "#",
+  },
+  {
+    id: 6,
+    title: "RSF captura El Fasher: masacres dejan miles de muertos en Sudán",
+    category: "Humanitario",
+    date: "2025-10-30",
+    description:
+      "Las RSF toman El Fasher tras 18 meses de asedio. ONGs reportan más de 2.000 civiles asesinados y la ONU alerta riesgo de genocidio en Darfur.",
+    source: "ONU, MSF, The Guardian",
+    link: "#",
+  },
+  {
+    id: 7,
+    title: "Corea del Norte envía 5.000 soldados a Rusia para apoyo en Ucrania",
+    category: "Geopolítica",
+    date: "2025-11-08",
+    description:
+      "Se confirma que Corea del Norte despliega tropas a Rusia en plena ofensiva en Pokrovsk, mientras Moscú lanza ataques masivos con drones en Ucrania.",
+    source: "Reuters, BBC, CNN",
+    link: "#",
+  },
+  {
+    id: 8,
+    title: "COP30 inicia con advertencia de la ONU sobre fracaso climático",
+    category: "Clima",
+    date: "2025-11-06",
+    description:
+      "Guterres denuncia 'fracaso moral' al no contener el calentamiento. Brasil impulsa un fondo de 125.000 millones para bosques tropicales.",
+    source: "ONU, The Guardian, Reuters",
+    link: "#",
+  },
+  {
+    id: 9,
+    title: "China, Japón y Taiwán elevan tensiones con ejercicios y alertas",
+    category: "Geopolítica",
+    date: "2025-10-15",
+    description:
+      "China realiza maniobras cerca de Japón tras declaraciones sobre Taiwán; EE.UU. aprueba venta de armas por 2.000 millones a la isla.",
+    source: "BBC, WSJ, Global Times",
+    link: "#",
+  },
+  {
+    id: 10,
+    title: "Gran despliegue naval de EE.UU. en el Caribe en tensión con Venezuela",
+    category: "Latinoamérica",
+    date: "2025-11-15",
+    description:
+      "EE.UU. moviliza el mayor despliegue naval en el Caribe desde 1962. Maduro denuncia 'guerra fabricada' y CELAC exige desescalada.",
+    source: "CNN, BBC, DW",
+    link: "#",
+  },
+  {
+    id: 11,
+    title: "Plan de paz de Trump para Ucrania recibe rechazo europeo",
+    category: "Geopolítica",
+    date: "2025-10-22",
+    description:
+      "Trump exige a Ucrania ceder Crimea y parte del Donbás a cambio de alto el fuego. La UE lo califica de 'imposición unilateral'.",
+    source: "NYT, Reuters, BBC",
+    link: "#",
+  },
+  {
+    id: 12,
+    title: "China suspende importaciones de Japón tras nuevas ventas de armas a Taiwán",
+    category: "Economía",
+    date: "2025-11-19",
+    description:
+      "China congela la compra de mariscos japoneses tras ventas militares estadounidenses a Taiwán, golpeando comercio y turismo.",
+    source: "DW, Reuters, Al Jazeera",
+    link: "#",
+  },
+  {
+    id: 13,
+    title: "Trump anuncia operaciones terrestres contra Venezuela",
+    category: "Latinoamérica",
+    date: "2025-11-29",
+    description:
+      "EE.UU. declara el espacio aéreo venezolano como 'cerrado' y anuncia inminentes incursiones terrestres; Maduro moviliza tropas.",
+    source: "NYT, BBC, Telesur",
+    link: "#",
+  },
+  {
+    id: 14,
+    title: "COP30 termina sin acuerdo histórico y sin eliminación de fósiles",
+    category: "Clima",
+    date: "2025-11-22",
+    description:
+      "La COP30 cierra sin compromisos sobre combustibles fósiles, aunque se triplica la financiación para adaptación a 120.000 millones.",
+    source: "ONU, The Guardian, Reuters",
     link: "#",
   },
 ]
 
-const categories = ["Todos", "Comercio", "Geopolítica", "Humanitario", "Tecnología", "Economía"]
+
+const categories = ["Todos"]
 
 export default function NewsSection() {
   return (

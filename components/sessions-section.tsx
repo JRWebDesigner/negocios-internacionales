@@ -10,6 +10,7 @@ interface Session {
   title: string
   date: string
   topics: string[]
+  enlace: string
   description: string
   materials: { name: string; type: string }[]
 }
@@ -17,81 +18,51 @@ interface Session {
 const sessions: Session[] = [
   {
     id: 1,
-    title: "Introducción a las Relaciones Internacionales",
-    date: "2024-01-15",
-    topics: ["Concepto de RI", "Actores internacionales", "Historia moderna"],
+    title: "Antonio Gramsci: Conceptos clave y su relevancia en Relaciones Internacionales",
+    date: "",
+    topics: [""],
+    enlace: "/ses1.pnf",
     description:
-      "Sesión introductoria que cubre los fundamentos de las relaciones internacionales, los actores principales y el contexto histórico.",
+      "Introducción a Antonio Gramsci, su teoría de la hegemonía cultural y su impacto en el análisis de las relaciones internacionales.",
     materials: [
-      { name: "Presentación Sesión 1", type: "PDF" },
       { name: "Lectura Recomendada", type: "PDF" },
     ],
   },
   {
+    //Teoría Marxista en Relaciones Internacionales e Historia
     id: 2,
-    title: "Idealismo vs Realismo",
-    date: "2024-01-22",
-    topics: ["Teoría idealista", "Teoría realista", "Comparativa"],
-    description: "Análisis comparativo entre el enfoque idealista y realista de las relaciones internacionales.",
+    title: "Teoría Marxista en Relaciones Internacionales e Historia",
+    date: "",
+    topics: [""],
+    enlace: "/ses2.pnf",
+    description:
+      "Exploración de los fundamentos del marxismo, su enfoque en la economía política y su aplicación al estudio de las relaciones internacionales.",
     materials: [
-      { name: "Diapositivas Sesión 2", type: "PDF" },
-      { name: "Casos de Estudio", type: "DOCX" },
+      { name: "Fundamentos del Marxismo", type: "PDF" },
     ],
   },
   {
     id: 3,
-    title: "Neorrealismo Estructural",
-    date: "2024-01-29",
-    topics: ["Waltz", "Estructura del sistema", "Poder relativo"],
+    title: "Libro de apuntes",
+    date: "",
+    topics: [""],
+    enlace: "/ses3.pnf",
     description:
-      "Exploración de la teoría neorrealista de Kenneth Waltz y su impacto en las relaciones internacionales.",
+      "",
     materials: [
-      { name: "Teoría Neorrealista", type: "PDF" },
-      { name: "Análisis de casos", type: "PDF" },
+      { name: "Libro de apuntes", type: "PDF" },
     ],
   },
   {
+    //Teoría del Idealismo (Liberalismo) en Relaciones Internacionales
     id: 4,
-    title: "Marxismo y Relaciones Internacionales",
-    date: "2024-02-05",
-    topics: ["Materialismo histórico", "Imperialismo", "Dependencia económica"],
-    description: "Análisis del enfoque marxista en relaciones internacionales y su crítica al sistema capitalista.",
+    title: "Teoría del Idealismo (Liberalismo) en Relaciones Internacionales",
+    date: "",
+    topics: [""],
+    enlace: "/ses4.pnf",
+    description: "Análisis del idealismo en las relaciones internacionales, destacando la cooperación internacional, las instituciones globales y la promoción de la paz.",
     materials: [
-      { name: "Marxismo en RI", type: "PDF" },
-      { name: "Teoría de la Dependencia", type: "PDF" },
-    ],
-  },
-  {
-    id: 5,
-    title: "Orden Internacional Contemporáneo",
-    date: "2024-02-12",
-    topics: ["Post-Guerra Fría", "Multipolarismo", "Globalización"],
-    description: "Examen del orden internacional actual, cambios geopolíticos y desafíos globales.",
-    materials: [
-      { name: "Orden Global Actual", type: "PDF" },
-      { name: "Documentos de referencia", type: "PDF" },
-    ],
-  },
-  {
-    id: 6,
-    title: "Instituciones Internacionales",
-    date: "2024-02-19",
-    topics: ["ONU", "Organismos regionales", "Gobernanza global"],
-    description: "Análisis de las principales instituciones internacionales y su rol en el sistema global.",
-    materials: [
-      { name: "Instituciones Clave", type: "PDF" },
-      { name: "Resoluciones de la ONU", type: "PDF" },
-    ],
-  },
-  {
-    id: 7,
-    title: "Conflictos y Seguridad Internacional",
-    date: "2024-02-26",
-    topics: ["Seguridad nacional", "Conflictos armados", "Diplomacia"],
-    description: "Estudio de la seguridad internacional, conflictos contemporáneos y mecanismos de resolución.",
-    materials: [
-      { name: "Seguridad Internacional", type: "PDF" },
-      { name: "Casos de conflictos", type: "PDF" },
+      { name: "Archivo pdf", type: "PDF" },
     ],
   },
 ]
@@ -102,8 +73,8 @@ export default function SessionsSection() {
   return (
     <div className="space-y-6">
       <div className="mb-8">
-        <h2 className="text-4xl font-bold mb-2">Sesiones de Clase</h2>
-        <p className="text-muted-foreground">Accede a todas las 7 sesiones con materiales y recursos descargables</p>
+        <h2 className="text-4xl font-bold mb-2">Sesiones</h2>
+        <p className="text-muted-foreground">Accede a todas las 4 sesiones con materiales y recursos descargables</p>
       </div>
 
       <div className="grid gap-4">
@@ -146,8 +117,10 @@ export default function SessionsSection() {
                         <div key={idx} className="flex justify-between items-center p-3 bg-muted/30 rounded-lg">
                           <span className="text-foreground">{material.name}</span>
                           <Button size="sm" variant="outline" className="gap-2 bg-transparent">
-                            <Download className="w-4 h-4" />
-                            Descargar
+                            <a href={session.enlace} target="_blank" rel="noopener noreferrer">
+                              <Download className="w-4 h-4" />
+                              Descargar
+                            </a>
                           </Button>
                         </div>
                       ))}
