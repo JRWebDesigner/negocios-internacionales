@@ -174,9 +174,14 @@ export default function TheoriesSection() {
                         ></iframe>
                       )}
                       {theory.id === "realismo" && (
-                        <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-                          Video próximamente disponible
-                        </div>
+                        <iframe
+                          src="https://drive.google.com/file/d/1u5wXmukF3P9Ddbs8uL4rmBxXx-fVFYYw/preview"
+                          width="100%"
+                          height="100%"
+                          allow="autoplay"
+                          allowfullscreen
+                          title="Video incrustado desde Drive">
+                        </iframe>
                       )}
                     </div>
                   </div>
