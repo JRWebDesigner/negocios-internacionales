@@ -234,7 +234,7 @@ const newsArticles: NewsArticle[] = [
   },
 ]
 
-export function NewsSection() {
+export default function NewsSection(){
   return (
     <div className="space-y-8">
       <div className="mb-8">
