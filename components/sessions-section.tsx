@@ -30,12 +30,12 @@ const sessions: Session[] = [
   },
   {
     id: 2,
-    title: "Teoría Marxista en Relaciones Internacionales e Historia",
+    title: "Competencia estratégica entre Estados Unidos, China y Rusia",
     date: "",
     topics: [""],
     enlace: "/ses2.pdf",
     description:
-      "Exploración de los fundamentos del marxismo, su enfoque en la economía política y su aplicación al estudio de las relaciones internacionales.",
+      ",
     materials: [
       { name: "Fundamentos del Marxismo", type: "PDF" },
     ],
@@ -53,18 +53,18 @@ const sessions: Session[] = [
   },
   {
     id: 4,
-    title: "Teoría del Idealismo (Liberalismo) en Relaciones Internacionales",
+    title: "Karl Marxs-Vladimir Lenin",
     date: "",
     topics: [""],
     enlace: "/ses4.pdf",
-    description: "Análisis del idealismo en las relaciones internacionales, destacando la cooperación internacional, las instituciones globales y la promoción de la paz.",
+    description: "",
     materials: [
       { name: "Archivo pdf", type: "PDF" },
     ],
   },
   {
     id: 5,
-    title: "Competencia estratégica entre Estados Unidos, China y Rusia — y el rol de la Unión Europea",
+    title: "libro de apuntes 2",
     date: "",
     topics: [""],
     enlace: "/ses5.pdf",
@@ -75,32 +75,21 @@ const sessions: Session[] = [
   },
   {
     id: 6,
-    title: "Visiones del Mundo de las Relaciones Internacionales",
+    title: "Teoría del Liberalismo e Idealismo",
     date: "",
     topics: [""],
     enlace: "/ses6.pdf",
-    description: "Visiones del Mundo de las Relaciones Internacionales",
-    materials: [
-      { name: "Archivo pdf", type: "PDF" },
-    ],
-  },
-  {
-    id: 7,
-    title: "NEGOCIOS INTERNACIONALES",
-    date: "",
-    topics: [""],
-    enlace: "/ses7.pdf",
     description: "",
     materials: [
       { name: "Archivo pdf", type: "PDF" },
     ],
   },
   {
-    id: 8,
-    title: "La Transformación Digital y sus Efectos sobre las Relaciones Internacionales",
+    id: 7,
+    title: "Visiones del Mundo de las Relaciones Internacionales",
     date: "",
     topics: [""],
-    enlace: "/ses8.pdf",
+    enlace: "/ses7.pdf",
     description: "",
     materials: [
       { name: "Archivo pdf", type: "PDF" },
