@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Card } from "@/components/ui/card"
-import { ChevronDown, ChevronUp, Download } from "lucide-react"
+import { ChevronDown, ChevronUp, Download, X, ExternalLink, FileText } from "lucide-react"
 
 interface Theory {
   id: string
@@ -107,15 +107,50 @@ Los marxistas han contribuido significativamente al análisis de la pobreza glob
 
 export default function TheoriesSection() {
   const [expandedId, setExpandedId] = useState<string | null>(null)
+  const [viewerOpen, setViewerOpen] = useState<boolean>(false)
+  const [currentFile, setCurrentFile] = useState<{url: string, name: string, type: string} | null>(null)
 
-  const handleDownload = (pdfUrl: string, fileName: string) => {
-    // Crear un enlace temporal
+  const openViewer = (url: string, name: string) => {
+    // Determinar el tipo de archivo por extensión
+    const extension = url.split('.').pop()?.toLowerCase()
+    const isPdf = extension === 'pdf'
+    
+    setCurrentFile({
+      url,
+      name,
+      type: isPdf ? 'pdf' : extension || 'file'
+    })
+    setViewerOpen(true)
+  }
+
+  const closeViewer = () => {
+    setViewerOpen(false)
+    setCurrentFile(null)
+  }
+
+  const handleDownload = (url: string, fileName: string) => {
     const link = document.createElement('a')
-    link.href = pdfUrl
+    link.href = url
     link.download = fileName
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
+  }
+
+  const getFileIcon = (url: string) => {
+    const extension = url.split('.').pop()?.toLowerCase()
+    switch(extension) {
+      case 'pdf':
+        return <FileText className="w-4 h-4 text-red-500" />
+      case 'docx':
+      case 'doc':
+        return <FileText className="w-4 h-4 text-blue-500" />
+      case 'pptx':
+      case 'ppt':
+        return <FileText className="w-4 h-4 text-orange-500" />
+      default:
+        return <FileText className="w-4 h-4 text-gray-500" />
+    }
   }
 
   return (
@@ -179,29 +214,51 @@ export default function TheoriesSection() {
                           width="100%"
                           height="100%"
                           allow="autoplay"
-                          allowfullscreen
-                          title="Video incrustado desde Drive">
-                        </iframe>
+                          title="Video de Realismo"
+                        ></iframe>
                       )}
                     </div>
                   </div>
 
                   <div>
-                    <h4 className="font-semibold mb-4 text-primary">Material de Estudio (PDF)</h4>
+                    <h4 className="font-semibold mb-4 text-primary">Material de Estudio</h4>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                      {theory.pdfs.map((pdf) => (
-                        <button
-                          key={pdf.id}
-                          onClick={(e) => {
-                            e.stopPropagation() // Evitar que se cierre el acordeón
-                            handleDownload(pdf.url, `${theory.name} - ${pdf.name}.pdf`)
-                          }}
-                          className="flex items-center justify-between p-3 border border-border rounded-lg hover:bg-accent hover:text-accent-foreground transition-colors group"
-                        >
-                          <span className="text-sm font-medium truncate mr-2">{pdf.name}</span>
-                          <Download className="w-4 h-4 flex-shrink-0 text-muted-foreground group-hover:text-primary" />
-                        </button>
-                      ))}
+                      {theory.pdfs.map((pdf) => {
+                        const fileExtension = pdf.url.split('.').pop()?.toLowerCase()
+                        const isPdf = fileExtension === 'pdf'
+                        
+                        return (
+                          <div
+                            key={pdf.id}
+                            onClick={(e) => e.stopPropagation()}
+                            className="flex items-center justify-between p-3 border border-border rounded-lg hover:bg-accent hover:text-accent-foreground transition-colors group"
+                          >
+                            <div className="flex items-center gap-2">
+                              {getFileIcon(pdf.url)}
+                              <span className="text-sm font-medium truncate">{pdf.name}</span>
+                              <span className="text-xs text-muted-foreground bg-muted px-2 py-1 rounded">
+                                .{fileExtension}
+                              </span>
+                            </div>
+                            <div className="flex gap-2">
+                              <button
+                                onClick={() => openViewer(pdf.url, `${theory.name} - ${pdf.name}`)}
+                                className="p-1 hover:bg-primary/10 rounded transition-colors"
+                                title={isPdf ? "Ver en visor" : "Vista previa"}
+                              >
+                                <FileText className="w-4 h-4" />
+                              </button>
+                              <button
+                                onClick={() => handleDownload(pdf.url, `${theory.name} - ${pdf.name}.${fileExtension}`)}
+                                className="p-1 hover:bg-primary/10 rounded transition-colors"
+                                title="Descargar"
+                              >
+                                <Download className="w-4 h-4" />
+                              </button>
+                            </div>
+                          </div>
+                        )
+                      })}
                     </div>
                   </div>
 
@@ -239,6 +296,136 @@ export default function TheoriesSection() {
           </Card>
         ))}
       </div>
+
+      {/* Visor de archivos modal */}
+      {viewerOpen && currentFile && (
+        <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
+          <div className="bg-background rounded-lg w-full max-w-6xl h-[90vh] flex flex-col">
+            <div className="flex items-center justify-between p-4 border-b">
+              <div className="flex items-center gap-2">
+                {getFileIcon(currentFile.url)}
+                <h3 className="text-lg font-semibold truncate max-w-md">
+                  {currentFile.name}
+                </h3>
+              </div>
+              <div className="flex items-center gap-2">
+                {currentFile.type === 'pdf' && (
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    className="gap-2"
+                    asChild
+                  >
+                    <a 
+                      href={currentFile.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      Abrir en nueva pestaña
+                    </a>
+                  </Button>
+                )}
+                <Button
+                  size="sm"
+                  variant="outline"
+                  onClick={() => handleDownload(currentFile.url, currentFile.name)}
+                  className="gap-2"
+                >
+                  <Download className="w-4 h-4" />
+                  Descargar
+                </Button>
+                <Button
+                  size="sm"
+                  variant="outline"
+                  onClick={closeViewer}
+                >
+                  <X className="w-4 h-4" />
+                </Button>
+              </div>
+            </div>
+            <div className="flex-1 p-4">
+              {currentFile.type === 'pdf' ? (
+                <iframe
+                  src={`${currentFile.url}#view=FitH`}
+                  className="w-full h-full rounded-lg border"
+                  title={`PDF Viewer - ${currentFile.name}`}
+                />
+              ) : (
+                <div className="w-full h-full flex flex-col items-center justify-center text-center p-8">
+                  <FileText className="w-24 h-24 text-muted-foreground mb-4" />
+                  <h4 className="text-xl font-semibold mb-2">
+                    Vista previa no disponible
+                  </h4>
+                  <p className="text-muted-foreground mb-6">
+                    Los archivos .{currentFile.type} no pueden mostrarse en el visor.<br />
+                    Por favor, descarga el archivo para ver su contenido.
+                  </p>
+                  <div className="flex gap-4">
+                    <Button
+                      variant="default"
+                      onClick={() => handleDownload(currentFile.url, currentFile.name)}
+                      className="gap-2"
+                    >
+                      <Download className="w-4 h-4" />
+                      Descargar archivo
+                    </Button>
+                    <Button
+                      variant="outline"
+                      onClick={closeViewer}
+                    >
+                      Cerrar
+                    </Button>
+                  </div>
+                </div>
+              )}
+              {currentFile.type === 'pdf' && (
+                <p className="text-sm text-muted-foreground mt-2 text-center">
+                  Si el PDF no se carga correctamente, haz clic en "Abrir en nueva pestaña"
+                </p>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
+  )
+}
+
+// Componente Button auxiliar si no lo tienes importado
+function Button({ 
+  children, 
+  onClick, 
+  variant = "default", 
+  size = "default",
+  className = "",
+  asChild = false,
+  ...props 
+}: any) {
+  const baseClasses = "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+  const variantClasses = {
+    default: "bg-primary text-primary-foreground hover:bg-primary/90",
+    outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+  }
+  const sizeClasses = {
+    default: "h-10 px-4 py-2",
+    sm: "h-9 rounded-md px-3",
+  }
+  
+  const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`
+  
+  if (asChild && props.href) {
+    return (
+      <a className={classes} {...props}>
+        {children}
+      </a>
+    )
+  }
+  
+  return (
+    <button className={classes} onClick={onClick} {...props}>
+      {children}
+    </button>
   )
 }
