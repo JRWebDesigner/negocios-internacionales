@@ -94,6 +94,50 @@ const sessions: Session[] = [
       { name: "Archivo pdf", type: "PDF" },
     ],
   },
+  {
+    id: 8,
+    title: "Apuntes 2 (2)",
+    date: "",
+    topics: [""],
+    enlace: "/ses8.pdf",
+    description: "",
+    materials: [
+      { name: "Archivo pdf", type: "PDF" },
+    ],
+  },
+  {
+    id: 9,
+    title: "Libro-de-Apuntes",
+    date: "",
+    topics: [""],
+    enlace: "/ses9.pdf",
+    description: "",
+    materials: [
+      { name: "Archivo pdf", type: "PDF" },
+    ],
+  },
+  {
+    id: 10,
+    title: "Negocios-Internacionales-Un-Mundo-Interconectado",
+    date: "",
+    topics: [""],
+    enlace: "/ses10.pdf",
+    description: "",
+    materials: [
+      { name: "Archivo pdf", type: "PDF" },
+    ],
+  },
+  {
+    id: 11,
+    title: "UNIVERSIDAD-CATOLICA-BOLIVIANA-SAN-PABLO (1)",
+    date: "",
+    topics: [""],
+    enlace: "/ses11.pdf",
+    description: "",
+    materials: [
+      { name: "Archivo pdf", type: "PDF" },
+    ],
+  },
 ]
 
 export default function SessionsSection() {
