@@ -71,8 +71,7 @@ Este enfoque proporciona una explicación realista de las guerras, competencias 
     pdfs: [
       { id: "1", name: "Material de apoyo 1", url: "/real1.pdf" },
       { id: "2", name: "Material de apoyo 2", url: "/real2.pdf" },
-      { id: "3", name: "Material de apoyo 3", url: "/real3.docx" },
-      { id: "4", name: "Material de apoyo 4", url: "/real4.docx" }
+      { id: "3", name: "Material de apoyo 3", url: "/real3.pdf" }
     ]
   },
   {
@@ -192,7 +191,7 @@ export default function TheoriesSection() {
                     <div className="aspect-video w-full rounded-lg overflow-hidden bg-muted">
                       {theory.id === "idealismo" && (
                         <iframe
-                          src="https://drive.google.com/file/d/1c2WIR-emJCy9nFm_fxe7CsNTzs_lt7a_/preview"
+                          src="https://drive.google.com/file/d/1ZsFskweDi2CAd3uknjekynT4dGo3CO5Z/preview"
                           width="100%"
                           height="100%"
                           allow="autoplay"
@@ -201,7 +200,7 @@ export default function TheoriesSection() {
                       )}
                       {theory.id === "marxismo" && (
                         <iframe
-                          src="https://drive.google.com/file/d/1w9fJHpF0It4_pmCQwFhw7L_UX9ptT1KB/preview"
+                          src="https://drive.google.com/file/d/1uIsGisGB0Z4Wut62qvVLeEuY6Iq31wvn/preview"
                           width="100%"
                           height="100%"
                           allow="autoplay"
