@@ -2,8 +2,7 @@
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Badge } from "@/components/ui/badge"
-import { Calendar } from "lucide-react"
-
+import { Calendar, ExternalLink, Download  } from "lucide-react"
 interface NewsArticle {
   id: number
   title: string
@@ -122,6 +121,11 @@ const newsArticles: NewsArticle[] = [
       "Esta prueba representa una escalada significativa en la capacidad destructiva de Rusia, complicando los esfuerzos de diplomacia y aumentando el riesgo de conflictos regionales no controlados.",
     conclusion:
       "El Burevestnik marca un nuevo capítulo de incertidumbre nuclear en el siglo XXI, donde la disuasión mutua podría convertirse en un juego de ruleta rusa.",
+    links: [
+      "https://www.dw.com/es/vladimir-putin-anuncia-nuevo-misil-ruso-con-propulsi%C3%B3n-nuclear/a-74500739 ",
+      "https://www.dw.com/es/lo-que-hay-que-saber-sobre-el-misil-burevestnik-de-putin/a-74531014",
+      "https://www.dw.com/es/rusia-prob%C3%B3-un-dron-submarino-con-capacidad-nuclear/a-74542371"
+      ]
   },
   {
     id: 6,
@@ -138,6 +142,12 @@ const newsArticles: NewsArticle[] = [
       "La situación en Sudán continúa deteriorándose con cada avance militar, sugiriendo que sin intervención significativa, la catástrofe humanitaria se profundizará.",
     conclusion:
       "El Fasher se ha convertido en un símbolo de la inacción global ante tragedias humanitarias de escala genocida.",
+    links: [
+      "https://www.dw.com/es/paramilitares-toman-control-total-de-ciudad-en-sud%C3%A1n/a-74505190",
+      "https://www.dw.com/es/preocupaci%C3%B3n-por-la-vida-de-cientos-de-miles-de-civiles-en-sud%C3%A1n/a-74512089",
+      "https://www.dw.com/es/fuerzas-sudanesas-acusan-a-far-de-matar-a-m%C3%A1s-de-2000-civiles-en-dos-d%C3%ADas-en-al-fasher/a-74520779",
+      "https://www.dw.com/es/la-oms-denuncia-asesinato-de-460-personas-en-hospital-de-al-fasher/a-74545732"
+      ]
   },
   {
     id: 7,
@@ -154,6 +164,12 @@ const newsArticles: NewsArticle[] = [
       "La participación norcoreana sugiere que Rusia enfrenta limitaciones demográficas y de armamento, recurriendo a aliados lejanos.",
     conclusion:
       "El combate de soldados norcoreanos en Ucrania marca la convergencia de conflictos regionales en una arena de confrontación global.",
+    links: [
+      "https://www.dw.com/es/corea-del-norte-env%C3%ADa-5000-soldados-a-rusia-para-reconstruir-infraestructura/a-74617533",
+      "https://www.dw.com/es/la-pugna-rusia-ucrania-por-la-disputada-ciudad-de-pokrovsk/a-74615896",
+      "https://www.dw.com/es/rusia-lanza-masivo-ataque-con-450-drones-contra-ucrania/a-74671688",
+      "https://www.dw.com/es/estados-unidos-y-sus-socios-eval%C3%BAan-lanzamiento-de-misil-norcoreano/a-74670169"
+      ]
   },
   {
     id: 8,
@@ -169,6 +185,12 @@ const newsArticles: NewsArticle[] = [
     analisisCritico:
       "Las advertencias de inicio de COP30 sugieren una desconexión entre urgencia retorica y capacidad política de implementación.",
     conclusion: "COP30 podría ser la última oportunidad antes de puntos de no retorno climático irreversibles.",
+    links: [
+      "https://www.dw.com/es/comienza-la-cumbre-de-l%C3%ADderes-de-la-cop30-en-brasil/a-74645802",
+      "https://www.dw.com/es/onu-denuncia-fracaso-en-limitar-el-calentamiento-global/a-74647963",
+      "https://www.dw.com/es/cop30-contra-reloj-frente-a-la-crisis-clim%C3%A1tica/a-74654290",
+      "https://www.dw.com/es/cop30-en-el-amazonas-lleg%C3%B3-el-momento-de-la-verdad/a-74662884"
+      ]
   },
   {
     id: 9,
@@ -184,6 +206,12 @@ const newsArticles: NewsArticle[] = [
     analisisCritico:
       "El equilibrio militar en el Estrecho se erosiona a favor de China, aumentando presión sobre Taiwán y sus aliados.",
     conclusion: "El Estrecho de Taiwán se ha convertido en el punto más volátil de la geopolítica del siglo XXI.",
+    links: [
+      "https://www.dw.com/es/crece-tensi%C3%B3n-entre-china-y-jap%C3%B3n-por-dichos-sobre-taiw%C3%A1n/a-74683975",
+      "https://www.dw.com/es/china-y-jap%C3%B3n-escalan-advertencias-y-amenazas-por-taiw%C3%A1n/a-74725800",
+      "https://www.dw.com/es/china-aconseja-a-sus-ciudadanos-evitar-viajes-a-jap%C3%B3n/a-74756141",
+      "https://www.dw.com/es/ee-uu-aprueba-primera-venta-militar-a-taiw%C3%A1n-del-segundo-gobierno-de-trump/a-7474014"
+      ]
   },
   {
     id: 10,
@@ -199,6 +227,12 @@ const newsArticles: NewsArticle[] = [
     analisisCritico:
       "El despliegue militar corre el riesgo de escalada si ambas partes no mantienen comunicación clara.",
     conclusion: "El Caribe, una región de comercio vital, se ha convertido en arena de confrontación geopolítica.",
+        links: [
+      "https://www.theguardian.com/us-news/2025/nov/11/navy-carrier-trump-drugs-caribbean-latin-america",
+      "https://english.elpais.com/usa/2025-11-28/trump-says-the-us-will-begin-arresting-venezuelan-drug-traffickers-by-land-very-soon.html",
+      "https://cnnespanol.cnn.com/2025/11/27/venezuela/fuerzas-maduro-despliegues-estadounidenses-caribe-trax",
+      "https://elpais.com/internacional/2025-11-28/trump-asegura-que-estados-unidos-empezara-a-detener-a-narcos-venezolanos-por-tierra-muy-pronto-es-mas-facil.html"
+      ]
   },
   {
     id: 11,
@@ -214,6 +248,12 @@ const newsArticles: NewsArticle[] = [
     analisisCritico:
       "Las diferencias sobre términos de paz reflejan divisiones más profundas sobre arquitectura de seguridad europea.",
     conclusion: "El debate sobre paz en Ucrania es en realidad debate sobre orden europeo para próximas décadas.",
+       links: [
+      "https://www.dw.com/es/eeuu-presiona-a-ucrania-para-ceder-territorio-a-rusia/a-74814226",
+      "https://www.dw.com/es/el-plan-de-28-puntos-de-eeuu-con-rusia-para-la-paz-en-ucrania/a-74828823",
+      "https://www.dw.com/es/trump-da-ultim%C3%A1tum-a-ucrania-para-que-acepte-su-plan-de-paz/a-74843496",
+      "https://www.dw.com/es/aliados-de-ucrania-rechazan-plan-de-trump-en-su-forma-actual/a-74848271"
+      ]
   },
   {
     id: 12,
@@ -351,6 +391,43 @@ export default function NewsSection(){
           </AccordionItem>
         ))}
       </Accordion>
+      <div className="space-y-4">
+  <div className="flex items-center justify-between">
+    <h3 className="text-lg font-semibold">Documento PDF</h3>
+    <div className="flex gap-2">
+      <a
+        href="/ruta/a/tu/archivo.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 px-3 py-2 text-sm bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
+      >
+        <ExternalLink className="w-4 h-4" />
+        Abrir en nueva pestaña
+      </a>
+      <a
+        href="/ruta/a/tu/archivo.pdf"
+        download
+        className="inline-flex items-center gap-2 px-3 py-2 text-sm border border-input bg-background rounded-md hover:bg-accent hover:text-accent-foreground transition-colors"
+      >
+        <Download className="w-4 h-4" />
+        Descargar
+      </a>
+    </div>
+  </div>
+  
+  <div className="w-full h-[600px] border border-border rounded-lg overflow-hidden">
+    <iframe
+      src="/noticiafin.pdf"
+      className="w-full h-full"
+      title="Visor de PDF"
+      allowFullScreen
+    />
+  </div>
+  
+  <p className="text-sm text-muted-foreground text-center">
+    Si el PDF no se carga correctamente, haz clic en "Abrir en nueva pestaña"
+  </p>
+</div>
     </div>
   )
 }
