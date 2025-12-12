@@ -200,7 +200,7 @@ export default function TheoriesSection() {
                       )}
                       {theory.id === "marxismo" && (
                         <iframe
-                          src="https://drive.google.com/file/d/1uIsGisGB0Z4Wut62qvVLeEuY6Iq31wvn/preview"
+                          src="https://drive.google.com/file/d/1w9fJHpF0It4_pmCQwFhw7L_UX9ptT1KB/preview"
                           width="100%"
                           height="100%"
                           allow="autoplay"
@@ -209,7 +209,7 @@ export default function TheoriesSection() {
                       )}
                       {theory.id === "realismo" && (
                         <iframe
-                          src="https://drive.google.com/file/d/1u5wXmukF3P9Ddbs8uL4rmBxXx-fVFYYw/preview"
+                          src="https://drive.google.com/file/d/1uIsGisGB0Z4Wut62qvVLeEuY6Iq31wvn/preview"
                           width="100%"
                           height="100%"
                           allow="autoplay"
