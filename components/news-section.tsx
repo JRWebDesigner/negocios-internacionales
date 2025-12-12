@@ -32,6 +32,14 @@ const newsArticles: NewsArticle[] = [
       "Creo que esto no escalará a guerra regional si la liberación de rehenes avanza sin incidentes, pero su fragilidad por violaciones ONU podría reavivar hostilidades si árabes retiran fondos por asentamientos israelíes. Beneficiados salen Trump (refuerza legado con 'paz en Gaza') y potencias árabes, mientras perjudicados son palestinos con solo 50% de Gaza accesible. Hay sesgo evidente: medios occidentales enfatizan el 'rol clave de Europa' minimizando violaciones israelíes, versus Al Jazeera que destaca 'paz incierta' por abusos.",
     conclusion:
       "Este alto el fuego podría transformar Gaza en un modelo de paz compartida o desvanecerse como otro espejismo en el desierto de Oriente Medio.",
+    links: [
+      "https://www.dw.com/es/europa-se-esfuerza-por-tener-voz-en-la-reconstrucci%C3%B3n-de-gaza/a-74311117",
+      "https://www.dw.com/es/miles-de-palestinos-vuelven-a-ciudad-de-gaza-con-el-alto-el-fuego/a-74318727",
+      "https://www.dw.com/es/israel-dice-que-liberaci%C3%B3n-de-los-rehenes-comenzar%C3%A1-el-lunes/a-74322574",
+      "https://www.dw.com/es/alto-el-fuego-en-gaza-hacia-una-paz-duradera/a-74364183",
+      "https://www.dw.com/es/onu-denuncia-violaciones-de-derechos-de-palestinos-por-ham%C3%A1s-e-israel-en-gaza-pese-a-tregua/a-74369735",
+      "https://www.dw.com/es/qu%C3%A9-rol-tendr%C3%A1n-las-potencias-%C3%A1rabes-en-la-gaza-de-posguerra/a-74407251"
+    ]
   },
   {
     id: 2,
@@ -48,6 +56,12 @@ const newsArticles: NewsArticle[] = [
       "Creo que esto no escalará a una guerra regional o mundial militar, pero profundizará una 'guerra fría comercial' fragmentando el comercio global, similar a 2018 pero amplificada por la dependencia de tierras raras. Beneficiados salen sectores manufactureros estadounidenses y Trump, mientras perjudicados son consumidores globales con alzas del 10-15% en electrónicos y autos, y economías emergentes como las de Asia con pérdidas de 200.000 millones en cadenas de suministro.",
     conclusion:
       "Esta escalada podría reconfigurar el tablero comercial global como un duelo de titanes o como un laberinto de represalias que asfixie la innovación mundial.",
+    links: [
+      "https://www.dw.com/es/trump-anuncia-aranceles-del-100-a-china-por-hostildad/a-74317122",
+      "https://www.dw.com/es/china-acusa-a-eeuu-de-doble-moral-por-amenaza-de-nuevos-aranceles/a-74322254",
+      "https://www.dw.com/es/trump-dice-que-estados-unidos-quiere-ayudar-a-china-no-perjudicarla/a-74325887",
+      "https://www.dw.com/es/entran-en-vigor-aranceles-de-eeuu-a-madera-y-muebles/a-74343221"
+      ]
   },
   {
     id: 3,
@@ -64,6 +78,12 @@ const newsArticles: NewsArticle[] = [
       "Creo que esto podría escalar a un conflicto regional si Trump aprueba los Tomahawks, pero las sanciones económicas probablemente fuerzen a Putin a negociar un cese temporal en meses, dada la caída del 15% en ingresos petroleros rusos. Beneficiados salen Ucrania con 140.000 millones de euros extra, mientras perjudicados son Rusia con pérdidas de 50.000 millones anuales en exportaciones y consumidores globales por alzas energéticas.",
     conclusion:
       "Estas sanciones podrían romper el ciclo de impunidad rusa o encender una mecha que queme los puentes de la diplomacia global para siempre.",
+    links: [
+      "https://www.dw.com/es/washington-sanciona-a-dos-de-las-mayores-petroleras-rusas/a-74464933",
+      "https://www.dw.com/es/rusia-ataca-fmi-aprueba-usd-1400-millones-en-ayuda-a-ucrania/a-61074784",
+      "https://www.dw.com/es/trump-aplaza-cumbre-con-putin-porque-no-quiere-perder-el-tiempo/a-74449759",
+      "https://www.dw.com/es/trump-y-putin-congelan-di%C3%A1logo-en-budapest-y-la-ue-sigue-buscando-apoyo/a-74459791"
+      ]
   },
   {
     id: 4,
@@ -80,6 +100,12 @@ const newsArticles: NewsArticle[] = [
       "Creo que esto no escalará a una guerra regional inmediata, dada la presión estadounidense y la debilidad de la coalición de Netanyahu, pero podría fragmentar el plan de paz de Trump si la Knéset avanza a la segunda lectura. Beneficiados podrían ser extremistas israelíes con narrativa de nacionalismo, mientras perjudicados son palestinos con riesgo de 500.000 desplazados en asentamientos expandidos.",
     conclusion:
       "La anexión podría convertirse en el punto de quiebre final de cualquier solución palestina de dos estados o en un ultimátum que fracture las alianzas occidentales.",
+    links: [
+      "https://www.dw.com/es/parlamento-israel%C3%AD-aprueba-en-votaci%C3%B3n-preliminar-anexionar-cisjordania-ocupada/a-74459424,
+      "https://www.dw.com/es/vance-asegura-que-israel-no-anexionar%C3%A1-cisjordania/a-74472817",
+      "https://www.dw.com/es/rubio-planes-de-anexi%C3%B3n-en-cisjordania-amenazan-acuerdo/a-74465296",
+      "https://www.dw.com/es/trump-dice-que-israel-perder%C3%ADa-apoyo-de-eeuu-si-anexa-cisjordania/a-74478679"
+      ]
   },
   {
     id: 5,
@@ -295,6 +321,31 @@ export default function NewsSection(){
                   <h4 className="font-semibold text-foreground mb-2">Conclusión:</h4>
                   <p className="italic">{article.conclusion}</p>
                 </div>
+                <div>
+      <h4 className="font-semibold text-foreground mb-3">Links:</h4>
+      <div className="space-y-2">
+        {article.links && article.links.length > 0 ? (
+          article.links.map((link, index) => (
+            <div key={index} className="flex items-start gap-2 py-1">
+              <span className="text-xs text-muted-foreground mt-1">{index + 1}.</span>
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:text-primary/80 hover:underline transition-colors text-sm truncate block max-w-full"
+                title={link}
+              >
+                {link}
+              </a>
+            </div>
+          ))
+        ) : (
+          <p className="text-sm text-muted-foreground italic">
+            No hay links disponibles.
+          </p>
+        )}
+      </div>
+    </div>
               </div>
             </AccordionContent>
           </AccordionItem>
