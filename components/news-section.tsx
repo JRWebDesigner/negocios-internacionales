@@ -417,7 +417,7 @@ export default function NewsSection(){
   
   <div className="w-full h-[600px] border border-border rounded-lg overflow-hidden">
     <iframe
-      src="/noticiafin.pdf"
+      src="/noticiasfin.pdf"
       className="w-full h-full"
       title="Visor de PDF"
       allowFullScreen
