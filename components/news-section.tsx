@@ -101,7 +101,7 @@ const newsArticles: NewsArticle[] = [
     conclusion:
       "La anexión podría convertirse en el punto de quiebre final de cualquier solución palestina de dos estados o en un ultimátum que fracture las alianzas occidentales.",
     links: [
-      "https://www.dw.com/es/parlamento-israel%C3%AD-aprueba-en-votaci%C3%B3n-preliminar-anexionar-cisjordania-ocupada/a-74459424,
+      "https://www.dw.com/es/parlamento-israel%C3%AD-aprueba-en-votaci%C3%B3n-preliminar-anexionar-cisjordania-ocupada/a-74459424",
       "https://www.dw.com/es/vance-asegura-que-israel-no-anexionar%C3%A1-cisjordania/a-74472817",
       "https://www.dw.com/es/rubio-planes-de-anexi%C3%B3n-en-cisjordania-amenazan-acuerdo/a-74465296",
       "https://www.dw.com/es/trump-dice-que-israel-perder%C3%ADa-apoyo-de-eeuu-si-anexa-cisjordania/a-74478679"
