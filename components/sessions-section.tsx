@@ -34,8 +34,7 @@ const sessions: Session[] = [
     date: "",
     topics: [""],
     enlace: "/ses2.pdf",
-    description:
-      ",
+    description: "",
     materials: [
       { name: "Fundamentos del Marxismo", type: "PDF" },
     ],
